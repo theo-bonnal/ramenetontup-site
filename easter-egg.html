@@ -314,7 +314,9 @@
 
   function clampX(x) { return Math.max(memeW * 0.42, Math.min(W - memeW * 0.42, x)); }
 
-  // Difficulté : tout accélère avec le score
+  // Difficulté : tout accélère avec le score.
+  // ⚠️ Le serveur refuse les scores impossibles d'après CES règles (private.game_min_seconds) :
+  //    si tu modifies spawnEvery ou le délai de départ (0,6 s), modifie aussi la migration anti-triche.
   function fallTime() { return Math.max(1.05, 2.6 - 0.045 * score); }
   function spawnEvery() { return Math.max(0.42, 1.05 - 0.018 * score); }
   function bombChance() { return spawned < 3 ? 0 : Math.min(0.32, 0.08 + 0.006 * score); }
@@ -331,7 +333,11 @@
     spawned++;
   }
 
+  // Ticket de partie : le serveur note lui-même l'heure de départ (anti-triche)
+  var ticket = null;
+
   function start() {
+    ticket = rpc('start_game').catch(function () { return null; });
     items = []; effects = []; score = 0; elapsed = 0; spawned = 0; lastTup = null; spawnIn = 0.6; bounce = 0;
     memeX = W / 2; targetX = null;
     updateHud();
@@ -506,7 +512,9 @@
   // ------------------------------------------------------------------ Enregistrer son score
   var ERRORS = {
     invalid_pseudo: 'Pseudo de 2 à 16 caractères : lettres, chiffres, espaces, tirets.',
-    invalid_score: "Ce score n'a pas pu être enregistré.",
+    invalid_score: "Mémé n'a pas pu vérifier ce score : il n'est pas enregistré.",
+    invalid_session: 'Cette partie a déjà été enregistrée, ou elle est trop ancienne.',
+    no_ticket: "Cette partie n'a pas pu être chronométrée (pas de réseau au moment de jouer) : son score ne peut pas être enregistré.",
     too_many: 'Beaucoup de parties en même temps : réessaie dans une minute.'
   };
   $('save-form').addEventListener('submit', function (e) {
@@ -515,7 +523,12 @@
     var msg = $('save-msg'), btn = $('btn-save');
     if (!/^[A-Za-z0-9À-ÖØ-öø-ÿŒœ _'’-]{2,16}$/.test(pseudo)) { msg.className = 'save-msg err'; msg.textContent = ERRORS.invalid_pseudo; return; }
     btn.disabled = true; msg.className = 'save-msg'; msg.textContent = 'Envoi…';
-    rpc('submit_game_score', { p_pseudo: pseudo, p_score: score, p_duration_ms: Math.max(1000, Math.round(elapsed * 1000)) })
+    (ticket || Promise.resolve(null))
+      .then(function (id) {
+        if (!id) throw new Error('no_ticket');
+        // La durée n'est plus envoyée : le serveur la mesure lui-même depuis le clic sur « Jouer »
+        return rpc('submit_game_score', { p_session: id, p_pseudo: pseudo, p_score: score });
+      })
       .then(function (res) {
         writeStore('tup-pseudo', res.pseudo);
         msg.className = 'save-msg ok';
