@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.ramenetontup.app",
+      "sha256_cert_fingerprints": [
+        "36:BE:B5:B1:4B:25:12:11:32:3A:B6:F6:E7:8B:A3:57:2B:9F:12:1F:2B:6B:10:AE:C9:BA:27:53:3A:84:E0:70"
+      ]
+    }
+  }
+]
