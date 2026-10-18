@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rejoins la famille — Ramène ton Tup à Mémé</title>
+  <meta name="description" content="Tu es invité dans une famille sur Ramène ton Tup à Mémé, l'application qui fait revenir les boîtes prêtées.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#FFF8EB">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Tu es invité dans la famille !">
+  <meta property="og:description" content="Touche le lien pour rejoindre la famille sur Ramène ton Tup à Mémé. Rends les tup, c'est pas gratuit !">
+  <meta property="og:image" content="https://ramenetontup.fr/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="icon" href="meme.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="meme.svg" alt="" width="44" height="44">Ramène ton Tup à Mémé</a>
+  </div>
+</header>
+
+<main class="narrow">
+  <!-- Lien valide : le code et la marche à suivre -->
+  <div id="invite" hidden>
+    <div class="page-title">
+      <h1>Tu es invité dans la famille&nbsp;!</h1>
+      <p class="updated">Avec ce code, tu pourras voir et noter les boîtes prêtées entre vous.</p>
+    </div>
+
+    <div class="card">
+      <h2>Ton code d'invitation</h2>
+      <div class="code-box">
+        <p class="code" id="code" aria-live="polite"></p>
+      </div>
+      <button class="button" id="copy" type="button" hidden>Copier le code</button>
+      <p class="muted center">Il est valable 7 jours après son envoi.</p>
+    </div>
+
+    <div class="card">
+      <h2>Tu as déjà l'application</h2>
+      <a class="button primary" id="open" href="ramenetontup://rejoindre">Ouvrir l'application</a>
+      <p class="muted">Elle s'ouvre directement sur « Rejoindre une famille », avec le code déjà rempli.</p>
+    </div>
+
+    <div class="card">
+      <h2>Tu ne l'as pas encore</h2>
+      <ol class="steps">
+        <li><span>Installe l'application. Elle arrive bientôt sur Google Play : en attendant, demande le lien de test à la personne qui t'a invité.</span></li>
+        <li><span>Connecte-toi avec ton adresse email : tu reçois un code, pas de mot de passe.</span></li>
+        <li><span>Touche à nouveau le lien d'invitation, ou choisis « J'ai un code d'invitation » et tape le code ci-dessus.</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Lien abîmé ou incomplet -->
+  <div id="invalid" hidden>
+    <div class="page-title">
+      <h1>Ce lien d'invitation est incomplet</h1>
+    </div>
+    <div class="card">
+      <p class="notice error">Le code n'a pas pu être lu.</p>
+      <p>Le lien a peut-être été coupé en le copiant. Demande à la personne qui t'a invité de te le renvoyer, ou de te dicter le code à 8 caractères (par exemple K7QX-M3PA).</p>
+      <a class="button" href="./">Découvrir l'application</a>
+    </div>
+  </div>
+
+  <noscript>
+    <div class="card">
+      <p>Pour afficher ton code, ouvre ce lien dans le navigateur de ton téléphone. Tu peux aussi demander le code à la personne qui t'a invité et le taper dans l'application, dans « J'ai un code d'invitation ».</p>
+    </div>
+  </noscript>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav aria-label="Liens utiles">
+      <a href="./">Accueil</a>
+      <a href="confidentialite.html">Confidentialité</a>
+      <a href="mailto:bonjour@ramenetontup.fr">Contact</a>
+    </nav>
+    <p>Fait avec amour pour ma Mémé.</p>
+  </div>
+</footer>
+
+<script>
+  // Lit le code dans l'adresse (…/rejoindre?code=K7QXM3PA). Mêmes règles que l'application :
+  // 8 caractères parmi 31 faciles à lire. Le code est affiché comme du texte, jamais comme du HTML.
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var code = (params.get('code') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    var valid = /^[ABCDEFGHJKMNPQRSTUVWXYZ23456789]{8}$/.test(code);
+
+    document.getElementById('invite').hidden = !valid;
+    document.getElementById('invalid').hidden = valid;
+    if (!valid) return;
+
+    document.getElementById('code').textContent = code.slice(0, 4) + '-' + code.slice(4);
+    document.getElementById('open').href = 'ramenetontup://rejoindre?code=' + code;
+
+    var copy = document.getElementById('copy');
+    if (navigator.clipboard && window.isSecureContext) {
+      copy.hidden = false;
+      copy.addEventListener('click', function () {
+        navigator.clipboard.writeText(code).then(function () {
+          copy.textContent = 'Code copié ✓';
+        });
+      });
+    }
+  })();
+</script>
+</body>
+</html>
