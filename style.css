@@ -1,0 +1,154 @@
+/* Ramène ton Tup à Mémé — mini-site. Mêmes couleurs et contrastes que l'application. */
+:root {
+  --cream: #fff8eb;
+  --surface: #ffffff;
+  --surface-alt: #fbebd3;
+  --border: #ebdcc6;
+  --text: #49382b;
+  --muted: #6e5a4a;
+  --orange: #f28c45;
+  --orange-soft: #fde3cf;
+  --orange-text: #9a4e17;
+  --olive-text: #55663d;
+  --olive-soft: #e7ecdd;
+  --danger-text: #a8443a;
+  --danger-soft: #fbe1dd;
+  --radius: 20px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.55;
+}
+
+main {
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+h1, h2, .code {
+  font-family: 'Fredoka', 'Nunito', system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2rem; margin: 0.5rem 0; text-align: center; }
+h2 { font-size: 1.35rem; margin: 0 0 0.75rem; }
+p { margin: 0 0 0.75rem; }
+
+.hero { text-align: center; margin-bottom: 1.5rem; }
+.hero img { width: 9rem; height: 9rem; }
+.slogan { color: var(--orange-text); font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.25rem; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(73, 56, 43, 0.08);
+}
+
+.code-box {
+  background: var(--orange-soft);
+  border-radius: 12px;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.code {
+  font-size: 2.4rem;
+  letter-spacing: 0.2em;
+  margin: 0;
+  /* Compense l'espacement après le dernier caractère pour rester centré */
+  padding-left: 0.2em;
+  user-select: all;
+  -webkit-user-select: all;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 4rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: 2px solid var(--text);
+  background: var(--surface);
+  color: var(--text);
+  font: 800 1.125rem/1.2 'Nunito', system-ui, sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button + .button { margin-top: 0.75rem; }
+
+/* Bouton principal : texte brun sur orange (contraste 4.6:1, comme dans l'app) */
+.button.primary { background: var(--orange); border-color: var(--orange); box-shadow: 0 6px 16px rgba(73, 56, 43, 0.16); }
+
+.button:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+
+.steps { margin: 0; padding: 0; list-style: none; counter-reset: step; }
+.steps li {
+  counter-increment: step;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.5rem 0;
+}
+.steps li::before {
+  content: counter(step);
+  flex: 0 0 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  background: var(--olive-soft);
+  color: var(--olive-text);
+  font: 600 1.1rem/2.25rem 'Fredoka', sans-serif;
+  text-align: center;
+}
+
+.muted { color: var(--muted); font-size: 1rem; }
+.center { text-align: center; }
+
+.notice {
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+}
+.notice.ok { background: var(--olive-soft); color: var(--olive-text); }
+.notice.error { background: var(--danger-soft); color: var(--danger-text); }
+
+.stores { display: grid; gap: 0.75rem; }
+.soon {
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+[hidden] { display: none !important; }
+
+footer { text-align: center; color: var(--muted); font-size: 0.95rem; margin-top: 2rem; }
+footer a { color: var(--orange-text); }
+
+/* Pages de texte (confidentialité, suppression du compte) */
+main a { color: var(--orange-text); font-weight: 700; }
+.card ul { margin: 0 0 0.75rem; padding-left: 1.25rem; }
+.card li { margin-bottom: 0.35rem; }
+.card h2:not(:first-child) { margin-top: 1.25rem; }
+.updated { text-align: center; color: var(--muted); font-size: 1rem; margin-bottom: 1.5rem; }
+/* Repère les passages à compléter avant publication */
+mark.todo { background: #ffe066; color: var(--text); padding: 0 0.25em; border-radius: 4px; }
