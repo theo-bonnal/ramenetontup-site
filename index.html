@@ -4,33 +4,123 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ramène ton Tup à Mémé</title>
-  <meta name="description" content="L'application familiale qui retrouve les boîtes prêtées. Rends les tup, c'est pas gratuit !">
+  <meta name="description" content="L'application familiale qui note les boîtes prêtées et rappelle de les rendre. Rends les tup, c'est pas gratuit !">
+  <meta name="theme-color" content="#FFF8EB">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Ramène ton Tup à Mémé">
+  <meta property="og:description" content="Les boîtes prêtées reviennent à la maison. Rends les tup, c'est pas gratuit !">
+  <link rel="icon" href="meme.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="meme.svg" alt="" width="44" height="44">Ramène ton Tup à Mémé</a>
+  </div>
+</header>
+
 <main>
-  <div class="hero">
-    <img src="meme.svg" alt="" width="144" height="144">
-    <h1>Ramène ton Tup à Mémé</h1>
-    <p class="slogan">Rends les tup, c'est pas gratuit !</p>
-  </div>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <h1>Les boîtes prêtées reviennent à la maison.</h1>
+        <p class="lead">Une petite application pour noter qui a emprunté quoi dans la famille, et rappeler gentiment de rendre. Assez simple pour Mémé, assez drôle pour les petits-enfants.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="mailto:bonjour@ramenetontup.fr?subject=Je%20veux%20tester%20l'application">Tester en avant-première</a>
+          <span class="button soon" aria-disabled="true">Bientôt sur Google Play</span>
+        </div>
+      </div>
 
-  <div class="card">
-    <h2>Les boîtes de la famille, enfin retrouvées</h2>
-    <ol class="steps">
-      <li><span>Mémé prête trois boîtes de gratin : elle le note en 10 secondes.</span></li>
-      <li><span>Le jour venu, l'emprunteur reçoit un petit rappel.</span></li>
-      <li><span>Les boîtes reviennent, Mémé n'a plus de charge mentale, et c'est OK 👍</span></li>
-    </ol>
-  </div>
+      <div class="scene" aria-hidden="true">
+        <img class="meme" src="meme.svg" alt="" width="200" height="200">
+        <div class="tup">
+          <div class="tup-lid"><span class="tape">À rendre à Mémé !</span></div>
+          <div class="tup-body"></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <div class="stores">
-    <p class="soon">Bientôt sur Google Play et l'App Store</p>
-  </div>
+  <section class="how">
+    <div class="wrap">
+      <h2>Comment ça marche</h2>
+      <ol class="steps">
+        <li><span>Mémé prête trois boîtes de gratin à Gillou : elle le note en 10 secondes dans l'application.</span></li>
+        <li><span>Le jour venu, Gillou reçoit un petit rappel sur son téléphone.</span></li>
+        <li><span>Les boîtes reviennent, Mémé n'a plus de charge mentale, et c'est OK 👍</span></li>
+      </ol>
+    </div>
+  </section>
 
-  <footer>
-    <p><a href="confidentialite.html">Confidentialité</a> · <a href="suppression-compte.html">Supprimer mon compte</a></p>
-  </footer>
+  <section>
+    <div class="wrap">
+      <h2>Ce que la famille y trouve</h2>
+      <ul class="features">
+        <li>
+          <span class="icon" aria-hidden="true">🥡</span>
+          <h3>Un prêt noté en 10 secondes</h3>
+          <p>Qui emprunte, combien de boîtes, une photo et une description si tu veux. Les retours se notent en partie ou en totalité.</p>
+        </li>
+        <li>
+          <span class="icon" aria-hidden="true">🔔</span>
+          <h3>Un rappel, pas un reproche</h3>
+          <p>L'emprunteur reçoit une notification le jour choisi. Une seule, et aucune si tout est déjà rendu.</p>
+        </li>
+        <li>
+          <span class="icon" aria-hidden="true">👵</span>
+          <h3>Pensé pour etre facile</h3>
+          <p>Gros boutons, textes lisibles, connexion par un code reçu par email : aucun mot de passe à retenir.</p>
+        </li>
+        <li>
+          <span class="icon" aria-hidden="true">👨‍👩‍👧</span>
+          <h3>Toute la famille, et même la belle-famille</h3>
+          <p>On invite avec un code. Chacun voit les prêts en direct, et on peut faire partie de plusieurs familles.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tribunal">
+    <div class="narrow">
+      <h2 class="center">Le Tribunal de Mémé rend ses verdicts</h2>
+      <p class="center muted">Des prix pour rire, jamais pour gronder.</p>
+      <div class="verdict">
+        <p class="prize">🏆 Prix du retour éclair</p>
+        <p class="ruling">Max a rendu 2 boîtes ces 30 derniers jours. Mémé n'a pas besoin d'aller racheter des tup !</p>
+        <p class="signature">Le Tribunal de Mémé</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reassure">
+    <div class="wrap">
+      <p>Pas de pub, pas de pistage. Ce que tu notes reste dans la famille.</p>
+      <a href="confidentialite.html">Lire la politique de confidentialité</a>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="narrow">
+      <h2>Rends les tup, c'est pas gratuit !</h2>
+      <p class="lead">L'application arrive bientôt sur Google Play. En attendant, ta famille peut la tester en avant-première.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="mailto:bonjour@ramenetontup.fr?subject=Je%20veux%20tester%20l'application">Tester en avant-première</a>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <nav aria-label="Liens utiles">
+      <a href="confidentialite.html">Confidentialité</a>
+      <a href="suppression-compte.html">Supprimer mon compte</a>
+      <a href="mailto:bonjour@ramenetontup.fr">Contact</a>
+    </nav>
+    <p>Fait avec amour pour ma Mémé.</p>
+  </div>
+</footer>
 </body>
 </html>

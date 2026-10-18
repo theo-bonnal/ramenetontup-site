@@ -5,18 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Confidentialité — Ramène ton Tup à Mémé</title>
   <meta name="description" content="Quelles données utilise l'application Ramène ton Tup à Mémé, pourquoi, et comment les supprimer.">
+  <meta name="theme-color" content="#FFF8EB">
+  <link rel="icon" href="meme.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
-  <div class="hero">
-    <img src="meme.svg" alt="" width="144" height="144">
-    <h1>Politique de confidentialité</h1>
-    <p class="slogan">Rends les tup, c'est pas gratuit !</p>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="meme.svg" alt="" width="44" height="44">Ramène ton Tup à Mémé</a>
   </div>
-  <p class="updated">Dernière mise à jour : 18 octobre 2026</p>
+</header>
 
-  <div class="card">
+<main class="narrow">
+  <div class="page-title">
+    <h1>Politique de confidentialité</h1>
+    <p class="updated">Dernière mise à jour : 18 octobre 2026</p>
+  </div>
+
+  <div class="card summary">
     <h2>En bref</h2>
     <ul>
       <li>L'application sert à noter les boîtes prêtées dans ta famille. Tes données servent <strong>uniquement</strong> à ça.</li>
@@ -27,59 +34,59 @@
   </div>
 
   <div class="card">
-    <h2>Qui est responsable ?</h2>
-    <p>L'application « Ramène ton Tup à Mémé » est éditée par Théo Bonnal, à titre personnel.</p>
-    <p>Contact pour toute question sur tes données : <mark class="todo">bonjour@ramenetontup.fr</mark></p>
+    <h2>Qui est responsable ?</h2>
+    <p>L'application « Ramène ton Tup à Mémé » est éditée par Théo Bonnal, à titre personnel.</p>
+    <p>Contact pour toute question sur tes données : <a href="mailto:bonjour@ramenetontup.fr">bonjour@ramenetontup.fr</a></p>
   </div>
 
   <div class="card">
     <h2>Les données utilisées</h2>
     <ul>
-      <li><strong>Ton adresse email</strong> : pour t'envoyer le code de connexion. Elle n'est jamais montrée aux autres membres.</li>
-      <li><strong>Ton pseudonyme</strong> : le nom que voit ta famille.</li>
-      <li><strong>Tes familles</strong> : leur nom, leurs membres, qui en est administrateur, et les codes d'invitation (valables 7 jours).</li>
-      <li><strong>Les prêts</strong> : qui prête à qui, le nombre de boîtes, la description et la photo (facultatives), les dates, la date de rappel et les retours.</li>
-      <li><strong>Les photos</strong> : prises ou choisies par toi, réduites avant l'envoi, rangées dans un espace privé lisible seulement par ta famille.</li>
-      <li><strong>Les notifications</strong> : ta préférence (activées ou non) et un identifiant technique de ton téléphone, qui sert uniquement à t'envoyer les rappels.</li>
+      <li><strong>Ton adresse email</strong> : pour t'envoyer le code de connexion. Elle n'est jamais montrée aux autres membres.</li>
+      <li><strong>Ton pseudonyme</strong> : le nom que voit ta famille.</li>
+      <li><strong>Tes familles</strong> : leur nom, leurs membres, qui en est administrateur, et les codes d'invitation (valables 7 jours).</li>
+      <li><strong>Les prêts</strong> : qui prête à qui, le nombre de boîtes, la description et la photo (facultatives), les dates, la date de rappel et les retours.</li>
+      <li><strong>Les photos</strong> : prises ou choisies par toi, réduites avant l'envoi, rangées dans un espace privé lisible seulement par ta famille.</li>
+      <li><strong>Les notifications</strong> : ta préférence (activées ou non) et un identifiant technique de ton téléphone, qui sert uniquement à t'envoyer les rappels.</li>
     </ul>
     <p>L'application n'utilise ni ta position, ni tes contacts, ni ton micro. L'appareil photo et la galerie ne sont ouverts que lorsque tu le demandes.</p>
   </div>
 
   <div class="card">
-    <h2>Pourquoi ?</h2>
-    <p>Uniquement pour fournir le service que tu utilises : te connecter, partager les prêts avec ta famille, et t'envoyer les rappels que tu as choisis. C'est la base légale de « l'exécution du service » (article 6.1.b du RGPD).</p>
+    <h2>Pourquoi ?</h2>
+    <p>Uniquement pour fournir le service que tu utilises : te connecter, partager les prêts avec ta famille, et t'envoyer les rappels que tu as choisis. C'est la base légale de « l'exécution du service » (article 6.1.b du RGPD).</p>
   </div>
 
   <div class="card">
     <h2>Les prestataires techniques</h2>
-    <p>Pour fonctionner, l'application s'appuie sur quelques services, qui ne traitent les données que pour son compte :</p>
+    <p>Pour fonctionner, l'application s'appuie sur quelques services, qui ne traitent les données que pour son compte :</p>
     <ul>
-      <li><strong>Supabase</strong> : base de données, connexion, stockage des photos. Serveurs situés en <mark class="todo"> Europe de l'Ouest (Irelande)</mark>.</li>
-      <li><strong>Brevo</strong> (France) : envoi de l'email contenant le code de connexion.</li>
-      <li><strong>Expo</strong> et <strong>Google Firebase Cloud Messaging</strong> (Android) ou <strong>Apple</strong> (iPhone) : acheminement des notifications de rappel jusqu'à ton téléphone. Ils reçoivent le texte du rappel et l'identifiant du téléphone.</li>
+      <li><strong>Supabase</strong> : base de données, connexion, stockage des photos. Serveurs situés en Europe de l'Ouest (Irlande).</li>
+      <li><strong>Brevo</strong> (France) : envoi de l'email contenant le code de connexion.</li>
+      <li><strong>Expo</strong> et <strong>Google Firebase Cloud Messaging</strong> (Android) ou <strong>Apple</strong> (iPhone) : acheminement des notifications de rappel jusqu'à ton téléphone. Ils reçoivent le texte du rappel et l'identifiant du téléphone.</li>
     </ul>
-    <p>Certains de ces prestataires peuvent traiter des données hors de l'Union européenne ; ils s'engagent alors à les protéger selon les garanties prévues par le RGPD (clauses contractuelles types).</p>
+    <p>Certains de ces prestataires peuvent traiter des données hors de l'Union européenne ; ils s'engagent alors à les protéger selon les garanties prévues par le RGPD (clauses contractuelles types).</p>
   </div>
 
   <div class="card">
-    <h2>Combien de temps ?</h2>
+    <h2>Combien de temps ?</h2>
     <ul>
       <li>Tant que ton compte existe. Un prêt supprimé disparaît aussitôt, sa photo au plus tard deux heures après.</li>
       <li>Les journaux techniques des prestataires (connexions, envois d'emails) sont effacés automatiquement après une durée limitée.</li>
       <li>Les codes d'invitation expirent au bout de 7 jours.</li>
       <li>L'identifiant de notification est effacé quand tu te déconnectes, ou quand l'application est désinstallée.</li>
-      <li>À la suppression de ton compte : voir ci-dessous.</li>
+      <li>À la suppression de ton compte : voir ci-dessous.</li>
     </ul>
   </div>
 
   <div class="card" id="suppression">
     <h2>Supprimer ton compte</h2>
-    <p>Dans l'application : <strong>Réglages → Mes données → Supprimer mon compte</strong>. C'est immédiat et définitif.</p>
+    <p>Dans l'application : <strong>Réglages → Mes données → Supprimer mon compte</strong>. C'est immédiat et définitif.</p>
     <ul>
-      <li><strong>Supprimés</strong> : ton compte et ton adresse email, ton pseudonyme, tes téléphones enregistrés, ta place dans tes familles, et les familles où tu étais seul avec leurs prêts et leurs photos.</li>
-      <li><strong>Conservés pour les autres membres</strong> : les prêts que tu partageais avec eux, avec « Compte supprimé » à la place de ton nom.</li>
+      <li><strong>Supprimés</strong> : ton compte et ton adresse email, ton pseudonyme, tes téléphones enregistrés, ta place dans tes familles, et les familles où tu étais seul avec leurs prêts et leurs photos.</li>
+      <li><strong>Conservés pour les autres membres</strong> : les prêts que tu partageais avec eux, avec « Compte supprimé » à la place de ton nom.</li>
     </ul>
-    <p>Tu n'as plus accès à l'application ? Voir la page <a href="suppression-compte.html">supprimer mon compte</a>.</p>
+    <p>Tu n'as plus accès à l'application ? Voir la page <a href="suppression-compte.html">supprimer mon compte</a>.</p>
   </div>
 
   <div class="card">
@@ -89,7 +96,7 @@
 
   <div class="card">
     <h2>Sécurité</h2>
-    <p>Les échanges sont chiffrés (HTTPS). Chaque famille ne voit que ses propres données : la règle est vérifiée par le serveur, pas seulement par l'application. Les photos sont dans un espace privé, accessibles par des liens temporaires.</p>
+    <p>Les échanges sont chiffrés (HTTPS). Chaque famille ne voit que ses propres données : la règle est vérifiée par le serveur, pas seulement par l'application. Les photos sont dans un espace privé, accessibles par des liens temporaires.</p>
   </div>
 
   <div class="card">
@@ -102,10 +109,18 @@
     <p>Si cette politique change, la date en haut de page est mise à jour, et les changements importants sont signalés dans l'application.</p>
   </div>
 
-  <footer>
-    <p><a href="suppression-compte.html">Supprimer mon compte</a></p>
-    <p>Ramène ton Tup à Mémé — fait avec amour pour ma Mémé.</p>
-  </footer>
 </main>
+
+<footer>
+  <div class="wrap">
+    <nav aria-label="Liens utiles">
+      <a href="./">Accueil</a>
+      <a href="confidentialite.html">Confidentialité</a>
+      <a href="suppression-compte.html">Supprimer mon compte</a>
+      <a href="mailto:bonjour@ramenetontup.fr">Contact</a>
+    </nav>
+    <p>Fait avec amour pour ma Mémé.</p>
+  </div>
+</footer>
 </body>
 </html>
