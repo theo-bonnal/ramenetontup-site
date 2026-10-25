@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>L'application — Ramène ton Tup à Mémé</title>
+  <meta name="description" content="Ramène ton Tup à Mémé : note les boîtes prêtées en famille et rappelle gentiment de les rendre. Gratuite, sans publicité, sur iPhone, Android et ordinateur.">
+  <meta name="theme-color" content="#FFF8EB">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Ramène ton Tup à Mémé — l'application">
+  <meta property="og:description" content="Note les boîtes prêtées en famille et rappelle gentiment de les rendre.">
+  <meta property="og:url" content="https://ramenetontup.fr/application">
+  <meta property="og:image" content="https://ramenetontup.fr/og-image.png">
+  <link rel="icon" href="meme.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="meme.svg" alt="" width="44" height="44">Ramène ton Tup à Mémé</a>
+  </div>
+</header>
+
+<main class="listing">
+  <!-- En-tête de fiche : icône, nom, éditeur, infos clés -->
+  <section class="app-head">
+    <div class="narrow">
+      <div class="app-id">
+        <img class="app-icon" src="icone-app.png" alt="Icône de l'application : Mémé et sa boîte orange" width="96" height="96">
+        <div>
+          <h1>Ramène ton Tup à Mémé</h1>
+          <p class="app-dev">Théo Bonnal</p>
+          <p class="app-tagline">Rends les tup, c'est pas gratuit&nbsp;!</p>
+        </div>
+      </div>
+
+      <ul class="app-facts" aria-label="En bref">
+        <li><strong>Gratuite</strong><span>pour toujours</span></li>
+        <li><strong>0 pub</strong><span>ni pistage</span></li>
+        <li><strong>Famille</strong><span>Style de vie</span></li>
+        <li><strong>3 écrans</strong><span>iPhone · Android · PC</span></li>
+      </ul>
+
+      <a class="button primary install" id="install" href="https://app.ramenetontup.fr/">Installer</a>
+      <p class="muted center">Sans store&nbsp;: l'application s'ouvre dans le navigateur, puis s'ajoute à l'écran d'accueil.</p>
+    </div>
+  </section>
+
+  <!-- Captures d'écran (défilement horizontal) -->
+  <section class="shots" id="shots" aria-label="Captures d'écran">
+    <div class="shots-track" tabindex="0">
+      <img src="captures/capture-1.png" alt="Accueil : les boîtes prêtées et empruntées dans la famille" loading="lazy">
+      <img src="captures/capture-2.png" alt="Nouveau prêt : qui emprunte, combien de boîtes, et un rappel" loading="lazy">
+      <img src="captures/capture-3.png" alt="Le Tribunal de Mémé et ses prix" loading="lazy">
+      <img src="captures/capture-4.png" alt="Détail d'un prêt avec la photo de la boîte" loading="lazy">
+      <img src="captures/capture-5.png" alt="Inventaire : à rendre et on me doit" loading="lazy">
+      <img src="captures/capture-6.png" alt="Famille : le code d'invitation et les membres" loading="lazy">
+      <img src="captures/capture-7.png" alt="Capture d'écran de l'application" loading="lazy">
+      <img src="captures/capture-8.png" alt="Capture d'écran de l'application" loading="lazy">
+    </div>
+  </section>
+
+  <div class="narrow">
+    <!-- Comment l'installer, selon l'appareil -->
+    <section class="card how-install" aria-labelledby="install-title">
+      <h2 id="install-title">Comment l'installer</h2>
+      <div class="tabs" role="tablist" aria-label="Appareil">
+        <button type="button" role="tab" id="tab-iphone" aria-controls="panel-iphone" aria-selected="false">iPhone</button>
+        <button type="button" role="tab" id="tab-android" aria-controls="panel-android" aria-selected="true">Android</button>
+        <button type="button" role="tab" id="tab-pc" aria-controls="panel-pc" aria-selected="false">Ordinateur</button>
+      </div>
+
+      <div role="tabpanel" id="panel-iphone" aria-labelledby="tab-iphone" hidden>
+        <ol class="steps">
+          <li><span>Ouvre <a href="https://app.ramenetontup.fr/">app.ramenetontup.fr</a> dans <strong>Safari</strong>.</span></li>
+          <li><span>Touche <strong>Partager</strong> (le carré avec une flèche vers le haut), puis <strong>Sur l'écran d'accueil</strong>, puis <strong>Ajouter</strong>.</span></li>
+          <li><span>Ouvre l'application depuis ton écran d'accueil et connecte-toi <strong>là</strong>, avec ton adresse email.</span></li>
+        </ol>
+      </div>
+
+      <div role="tabpanel" id="panel-android" aria-labelledby="tab-android">
+        <ol class="steps">
+          <li><span>Touche <strong>Installer</strong> ci-dessus (dans Chrome).</span></li>
+          <li><span>Sur l'écran de bienvenue, touche <strong>Installer l'application</strong>. Sinon&nbsp;: menu ⋮ en haut à droite, puis <strong>Installer l'application</strong>.</span></li>
+          <li><span>L'icône de Mémé apparaît sur ton écran d'accueil. Connecte-toi avec ton adresse email.</span></li>
+        </ol>
+      </div>
+
+      <div role="tabpanel" id="panel-pc" aria-labelledby="tab-pc" hidden>
+        <ol class="steps">
+          <li><span>Ouvre <a href="https://app.ramenetontup.fr/">app.ramenetontup.fr</a> dans Chrome, Edge, Firefox ou Safari.</span></li>
+          <li><span>Connecte-toi avec ton adresse email&nbsp;: tu reçois un code, pas de mot de passe.</span></li>
+          <li><span>Avec Chrome ou Edge, l'icône d'installation dans la barre d'adresse la met dans tes applications.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- À propos -->
+    <section class="card" aria-labelledby="about-title">
+      <h2 id="about-title">À propos de l'application</h2>
+      <p>Mémé a prêté ses boîtes de gratin… et ne les a jamais revues&nbsp;? Ramène ton Tup à Mémé note qui a emprunté quoi dans la famille, et rappelle gentiment de rendre.</p>
+      <details class="more">
+        <summary>Lire la suite</summary>
+        <h3>🥡 Un prêt noté en 10 secondes</h3>
+        <p>Choisis qui emprunte, le nombre de boîtes, et ajoute une photo ou une description si tu veux. Les retours se notent en partie ou en totalité, et toute la famille voit les changements en direct.</p>
+        <h3>🔔 Un rappel, pas un reproche</h3>
+        <p>Le jour choisi, l'emprunteur reçoit une seule notification, au bon moment. Si tout est déjà rendu, il ne reçoit rien. <span class="muted">(Sur la version web, les rappels arrivent très bientôt.)</span></p>
+        <h3>⚖️ Le Tribunal de Mémé</h3>
+        <p>Prix du retour éclair, prix du cœur sur la main, prix de l'archéologie… Un palmarès pour rire, jamais pour gronder, à partager dans le groupe de la famille.</p>
+        <h3>👵 Pensé pour Mémé</h3>
+        <p>Gros boutons, textes lisibles, couleurs contrastées. Connexion par un code reçu par email&nbsp;: aucun mot de passe à retenir.</p>
+        <h3>👨‍👩‍👧 Toute la famille, et même la belle-famille</h3>
+        <p>On invite ses proches avec un code. On peut faire partie de plusieurs familles et passer de l'une à l'autre.</p>
+        <p class="signature">Fait avec amour pour ma Mémé.</p>
+      </details>
+      <ul class="tags" aria-label="Catégories">
+        <li>Style de vie</li>
+        <li>Entraide</li>
+        <li>Maison</li>
+        <li>Organisation</li>
+      </ul>
+    </section>
+
+    <!-- Sécurité des données -->
+    <section class="card" aria-labelledby="data-title">
+      <h2 id="data-title">Sécurité des données</h2>
+      <ul class="safety">
+        <li><span aria-hidden="true">🤝</span><div><strong>Aucune donnée partagée</strong><p>Rien n'est vendu ni transmis à des tiers à des fins commerciales.</p></div></li>
+        <li><span aria-hidden="true">👀</span><div><strong>Visible par ta famille seulement</strong><p>Prêts, photos et pseudo ne sont visibles que par les membres de tes familles.</p></div></li>
+        <li><span aria-hidden="true">🔒</span><div><strong>Données chiffrées lors du transfert</strong><p>Tous les échanges passent en HTTPS.</p></div></li>
+        <li><span aria-hidden="true">🗑️</span><div><strong>Suppression à tout moment</strong><p>Depuis l'application&nbsp;: Réglages → Mes données → Supprimer mon compte.</p></div></li>
+      </ul>
+      <p class="muted">Données utilisées&nbsp;: adresse email, pseudo, photos et prêts que tu ajoutes, identifiant de notification. <a href="confidentialite.html">Politique de confidentialité</a></p>
+    </section>
+
+    <!-- Assistance -->
+    <section class="card" aria-labelledby="help-title">
+      <h2 id="help-title">Assistance</h2>
+      <ul class="support">
+        <li><a href="mailto:bonjour@ramenetontup.fr">bonjour@ramenetontup.fr</a></li>
+        <li><a href="conditions.html">Conditions d'utilisation</a></li>
+        <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+        <li><a href="suppression-compte.html">Supprimer mon compte</a></li>
+      </ul>
+      <p class="muted">Version Android&nbsp;: bientôt sur Google Play.</p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav aria-label="Liens utiles">
+      <a href="./">Accueil</a>
+      <a href="confidentialite.html">Confidentialité</a>
+      <a href="conditions.html">Conditions d'utilisation</a>
+      <a href="suppression-compte.html">Supprimer mon compte</a>
+      <a href="mailto:bonjour@ramenetontup.fr">Contact</a>
+    </nav>
+    <p>Fait avec amour pour ma Mémé.</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    // Captures : on retire celles qui n'existent pas ; sans aucune, la section disparaît.
+    var shots = document.getElementById('shots');
+    var imgs = shots.querySelectorAll('img');
+    var left = imgs.length;
+    function gone(img) {
+      img.remove();
+      left -= 1;
+      if (left === 0) shots.hidden = true;
+    }
+    imgs.forEach(function (img) {
+      if (img.complete && img.naturalWidth === 0) gone(img);
+      else img.addEventListener('error', function () { gone(img); });
+    });
+
+    // Onglets : l'appareil de la personne est choisi d'office
+    var tabs = document.querySelectorAll('.tabs [role="tab"]');
+    function select(id) {
+      tabs.forEach(function (tab) {
+        var on = tab.id === id;
+        tab.setAttribute('aria-selected', on ? 'true' : 'false');
+        tab.tabIndex = on ? 0 : -1;
+        document.getElementById(tab.getAttribute('aria-controls')).hidden = !on;
+      });
+    }
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () { select(tab.id); });
+    });
+    var ua = navigator.userAgent;
+    var iphone = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    var android = /Android/.test(ua);
+    select(iphone ? 'tab-iphone' : android ? 'tab-android' : 'tab-pc');
+  })();
+</script>
+</body>
+</html>
