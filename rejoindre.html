@@ -50,10 +50,12 @@
 
     <div class="card">
       <h2>Tu ne l'as pas encore</h2>
+      <p>Pas besoin de store : la version web marche sur iPhone, Android et ordinateur.</p>
+      <a class="button primary" id="web" href="https://app.ramenetontup.fr/">Ouvrir la version web</a>
       <ol class="steps">
-        <li><span>Installe l'application. Elle arrive bientôt sur Google Play : en attendant, demande le lien de test à la personne qui t'a invité.</span></li>
-        <li><span>Connecte-toi avec ton adresse email : tu reçois un code, pas de mot de passe.</span></li>
-        <li><span>Touche à nouveau le lien d'invitation, ou choisis « J'ai un code d'invitation » et tape le code ci-dessus.</span></li>
+        <li><span>Connecte-toi avec ton adresse email : tu reçois un code, pas de mot de passe.</span></li>
+        <li><span>Choisis ton pseudo : le code d'invitation est déjà rempli, il ne reste qu'à rejoindre la famille.</span></li>
+        <li><span>Pour l'avoir comme une vraie app, ajoute-la à ton écran d'accueil : l'onglet Réglages explique comment.</span></li>
       </ol>
     </div>
   </div>
@@ -103,6 +105,7 @@
 
     document.getElementById('code').textContent = code.slice(0, 4) + '-' + code.slice(4);
     document.getElementById('open').href = 'ramenetontup://rejoindre?code=' + code;
+    document.getElementById('web').href = 'https://app.ramenetontup.fr/rejoindre?code=' + code;
 
     var copy = document.getElementById('copy');
     if (navigator.clipboard && window.isSecureContext) {
